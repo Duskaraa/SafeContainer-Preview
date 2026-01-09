@@ -1,0 +1,27 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "SafeContainer Preview v1.0.0",
+    "description": "A Minecraft Bedrock addon that allows players to preview the contents of kits and containers without being able to modify, move, or steal any items. It provides a secure, view-only interface with a clear and flexible configuration system, making it ideal for servers and Realms that need protected and reliable inventory previews.",
+    "uuid": "e168ed02-2c75-4b0d-8923-a43042f477ba",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 132]
+  },
+  "modules": [
+    {
+      "description": "Add-on Pack Resources",
+      "type": "resources",
+      "uuid": "79778b39-d2e3-4b49-9efe-09640dfcb489",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "ed1f1593-c21b-49f2-bb0a-4ac250d0aa43",
+      "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "authors": ["Duskara"]
+  }
+}
