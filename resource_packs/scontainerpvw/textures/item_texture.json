@@ -1,0 +1,24 @@
+{
+  "resource_pack_name": "SafeContainer Preview",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "source:toolbox_closed": {
+      "textures": "textures/items/toolbox_closed"
+    },
+    "source:toolbox_open": {
+      "textures": "textures/items/toolbox_open"
+    },
+    "source:selector_wand": {
+      "textures": "textures/items/selector_wand"
+    },
+    "source:inspect": {
+      "textures": "textures/items/inspect"
+    },
+    "source:settings": {
+      "textures": "textures/items/settings"
+    },
+    "source:set": {
+      "textures": "textures/items/set"
+    }
+  }
+}

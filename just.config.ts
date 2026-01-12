@@ -32,14 +32,21 @@ task("build", async () => {
   const src = path.join(__dirname, "scripts");
   const dest = path.join(__dirname, "dist/scripts");
 
-  async function copyDir(from, to) {
-    await fsp.rm(to, { recursive: true, force: true });
-    await fsp.mkdir(to, { recursive: true });
+  // Prefer native recursive copy when available (Node 16+), fall back otherwise.
+  await fsp.rm(dest, { recursive: true, force: true });
+  await fsp.mkdir(dest, { recursive: true });
+  if (typeof fsp.cp === "function") {
+    await fsp.cp(src, dest, { recursive: true });
+    return;
+  }
+
+  async function copyDir(from: string, to: string) {
     const entries = await fsp.readdir(from, { withFileTypes: true });
     for (const entry of entries) {
       const srcPath = path.join(from, entry.name);
       const destPath = path.join(to, entry.name);
       if (entry.isDirectory()) {
+        await fsp.mkdir(destPath, { recursive: true });
         await copyDir(srcPath, destPath);
       } else {
         await fsp.copyFile(srcPath, destPath);

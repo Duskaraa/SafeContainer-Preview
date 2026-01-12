@@ -11,6 +11,7 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "json.validate.enable": false,
   "git.ignoreLimitWarning": true,
   "editor.formatOnSave": true,
   "search.exclude": {
@@ -30,5 +31,29 @@
     "mcaddon"
   ],
   "editor.tabSize": 2,
-  "eslint.experimental.useFlatConfig": true
+  "eslint.experimental.useFlatConfig": true,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "behavior_packs/**/items/*.json"
+      ],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "format_version": { "type": ["string", "number", "object"] },
+          "minecraft:item": { "type": "object" }
+        },
+        "additionalProperties": true
+      }
+    },
+    {
+      "fileMatch": [
+        "resource_packs/**/particles/*.json"
+      ],
+      "schema": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  ]
 }
